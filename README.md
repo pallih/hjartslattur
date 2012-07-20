@@ -1,7 +1,7 @@
 Hjartslattur.is
 =========
 
-Tifandi 'dashboard' fyrir íslensk samfélag
+Tifandi 'dashboard' fyrir íslenskt samfélag
 
  [@pallih]
 
