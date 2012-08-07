@@ -1,2 +1,5 @@
-
+/push/*
 .DS_Store
+*.pyc
+/pnotify-1.2.0/*
+/bootstrap/*
