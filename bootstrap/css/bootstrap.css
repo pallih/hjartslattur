@@ -9,6 +9,7 @@
  */
 
 #title {margin-left: 60px;}
+#content {margin-left: 30px;}
 
 .ui-pnotify.custom .ui-pnotify-container {
   background-color: #404040 !important;
@@ -194,11 +195,11 @@ body {
   font-size: 13px;
   line-height: 18px;
   color: #333333;
-  background-color: lightslategray;
+  background-color: gray;
 }
 
 a {
-  color: #0088cc;
+  color: #fff;
   text-decoration: none;
 }
 
