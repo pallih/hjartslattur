@@ -21,14 +21,14 @@
     };
 
     // Flash fallback logging - don't include this in production
-    WEB_SOCKET_DEBUG = true;
+    //WEB_SOCKET_DEBUG = true;
 
     var pusher = new Pusher('c3b543d50de8b57237b1');
     var channel = pusher.subscribe('hjartslattur');
     $.pnotify.defaults.history = false;
     channel.bind('atwork', function(data) {
       $.pnotify({
-    title: 'Í vinnu núna á Landspítala',
+    title: 'Í vinnu núna á Landspítala:',
     text: data,
     icon: false,
     animation: {
@@ -39,7 +39,7 @@
         });
       channel.bind('blood', function(data) {
       $.pnotify({
-    title: 'Blóðgjafir í dag',
+    title: 'Blóðgjafir í dag:',
     text: data,
     icon: false,
     animation: {
@@ -48,6 +48,41 @@
     }
     });
     });
+      channel.bind('birthnumbers', function(data) {
+      $.pnotify({
+    title: 'Börn fædd í dag:',
+    text: data,
+    icon: false,
+    animation: {
+        effect_in: 'show',
+        effect_out: 'slide'
+    }
+    });
+    });
+        channel.bind('patients-er', function(data) {
+      $.pnotify({
+    title: 'Fjöldi á bráðadeild núna:',
+    text: data,
+    icon: false,
+    animation: {
+        effect_in: 'show',
+        effect_out: 'slide'
+    }
+    });
+    });
+             channel.bind('surgeris', function(data) {
+      $.pnotify({
+    title: 'Fjöldi skurðaðgerða núna:',
+    text: data,
+    icon: false,
+    animation: {
+        effect_in: 'show',
+        effect_out: 'slide'
+    }
+    });
+    });
+
+
   </script>
 </head>
 <body>
