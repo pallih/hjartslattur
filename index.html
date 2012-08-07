@@ -31,21 +31,21 @@
     title: 'Í vinnu núna á Landspítala:',
     text: data,
     icon: false,
-    animation: {
-        effect_in: 'show',
-        effect_out: 'slide'
-    }
-        });
+    addclass: 'custom',
+    opacity: .8,
+    nonblock: true,
+    nonblock_opacity: .2
+            });
         });
       channel.bind('donors', function(data) {
       $.pnotify({
     title: 'Blóðgjafir í dag:',
     text: data,
     icon: false,
-    animation: {
-        effect_in: 'show',
-        effect_out: 'slide'
-    }
+    addclass: 'custom',
+    opacity: .8,
+    nonblock: true,
+    nonblock_opacity: .2
     });
     });
       channel.bind('birthNumbers', function(data) {
@@ -53,10 +53,10 @@
     title: 'Börn fædd í dag:',
     text: data,
     icon: false,
-    animation: {
-        effect_in: 'show',
-        effect_out: 'slide'
-    }
+    addclass: 'custom',
+    opacity: .8,
+    nonblock: true,
+    nonblock_opacity: .2
     });
     });
         channel.bind('patients-er', function(data) {
@@ -64,10 +64,10 @@
     title: 'Fjöldi á bráðadeild núna:',
     text: data,
     icon: false,
-    animation: {
-        effect_in: 'show',
-        effect_out: 'slide'
-    }
+    addclass: 'custom',
+    opacity: .8,
+    nonblock: true,
+    nonblock_opacity: .2
     });
     });
              channel.bind('surgeries', function(data) {
@@ -75,10 +75,10 @@
     title: 'Fjöldi skurðaðgerða núna:',
     text: data,
     icon: false,
-    animation: {
-        effect_in: 'show',
-        effect_out: 'slide'
-    }
+    addclass: 'custom',
+    opacity: .8,
+    nonblock: true,
+    nonblock_opacity: .2
     });
     });
 
