@@ -8,22 +8,25 @@
     <script src="http://js.pusher.com/1.11/pusher.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    <link href="../pnotify-1.2.0/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css" />
-    <link href="../bootstrap/css/bootstrap.css" media="all" rel="stylesheet" type="text/css" />
+      <script type="text/javascript" src="pnotify-1.2.0/jquery.pnotify.min.js"></script>
+    <link href="pnotify-1.2.0/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="bootstrap/css/bootstrap.css" media="all" rel="stylesheet" type="text/css" />
 
     <title>Hjartslattur</title>
     <script type="text/javascript">
 
-    //Pusher.log = function(message) {
-    //  if (window.console && window.console.log) window.console.log(message);
-    //};
+     // Enable pusher logging - don't include this in production
+    Pusher.log = function(message) {
+      if (window.console && window.console.log) window.console.log(message);
+    };
 
-    //WEB_SOCKET_DEBUG = true;
+    // Flash fallback logging - don't include this in production
+    WEB_SOCKET_DEBUG = true;
 
     var pusher = new Pusher('c3b543d50de8b57237b1');
     var channel = pusher.subscribe('hjartslattur');
+    $.pnotify.defaults.history = false;
     channel.bind('atwork', function(data) {
-      $.pnotify.defaults.history = false;
       $.pnotify({
     title: 'Í vinnu núna á Landspítala',
     text: data,
@@ -35,7 +38,6 @@
         });
         });
       channel.bind('blood', function(data) {
-      $.pnotify.defaults.history = false;
       $.pnotify({
     title: 'Blóðgjafir í dag',
     text: data,
@@ -47,54 +49,8 @@
     });
     });
   </script>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/pallih/hjartslattur">View on GitHub</a>
-
-          <h1 id="project_title">Tifandi 'dashboard' fyrir íslenskt samfélag</h1>
-          <h2 id="project_tagline"></h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/pallih/hjartslattur/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/pallih/hjartslattur/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>hjartslattur.is</h3>
-
-<p><a href="http://twitter.com/pallih">@pallih</a></p>
-<p><a href="http://gogn.in">gogn.in</a>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Hjartslattur maintained by <a href="https://github.com/pallih">pallih</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-33100436-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
-
-  </body>
+</head>
+<body>
+  <div id="title"><h1>hjartslattur.is</a></div>
+</body>
 </html>
