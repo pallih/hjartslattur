@@ -26,6 +26,7 @@
     var pusher = new Pusher('c3b543d50de8b57237b1');
     var channel = pusher.subscribe('hjartslattur');
     $.pnotify.defaults.history = false;
+    $.pnotify.defaults.delay = 4500;
     channel.bind('atwork', function(data) {
       $.pnotify({
     title: 'Í vinnu núna á Landspítala:',
