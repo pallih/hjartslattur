@@ -19,3 +19,4 @@ def landspitali():
 		for d in s[1:]:
 			record[d.attrib['class']] =  d[1].text
 	return record
+print landspitali()
